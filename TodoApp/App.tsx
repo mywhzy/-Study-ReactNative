@@ -6,7 +6,7 @@ import Empty from "./components/Empty";
 import { useState } from "react";
 import TodoList from "./components/TodoList";
 
-export default function App() {
+const App = () => {
   const today = new Date();
 
   const [todos, setTodos] = useState([
@@ -56,7 +56,7 @@ export default function App() {
       </SafeAreaView>
     </SafeAreaProvider>
   );
-}
+};
 
 const styles = StyleSheet.create({
   block: {
@@ -67,3 +67,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+export default App;
