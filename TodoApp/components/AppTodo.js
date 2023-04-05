@@ -10,19 +10,20 @@ import {
   Keyboard,
 } from "react-native";
 
-const AppTodo = () => {
+const AppTodo = ({ onInsert }) => {
   const [text, setText] = useState("");
+
+  const onPress = () => {
+    onInsert(text);
+    setText("");
+    Keyboard.dismiss();
+  };
 
   const button = (
     <View style={styles.buttonStyle}>
       <Image source={require("../assets/icons/add_white/add_white.png")} />
     </View>
   );
-
-  const onPress = () => {
-    setText("");
-    Keyboard.dismiss(); // 현재 나타난 키보드 닫기
-  };
 
   return (
     <View style={styles.block}>
