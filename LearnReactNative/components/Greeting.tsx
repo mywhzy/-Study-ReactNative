@@ -1,10 +1,14 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-const Greeting = (props) => {
+interface GreetingProps {
+  name: string;
+}
+
+const Greeting = ({ name }: GreetingProps) => {
   return (
     <View>
-      <Text>안녕하세요 {props.name}</Text>
+      <Text>안녕하세요 {name}</Text>
     </View>
   );
 };

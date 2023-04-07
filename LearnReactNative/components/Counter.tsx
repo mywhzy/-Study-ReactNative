@@ -1,7 +1,19 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
-const Counter = ({ count, onIncrease, onDecrease }) => {
+interface Props {
+  count: number;
+  onIncrease: () => void;
+  onDecrease: () => void;
+}
+
+/* type Props = {
+   count: number;
+   onIncrease: () => void;
+   onDecrease: () => void;
+ } */
+
+const Counter = ({ count, onIncrease, onDecrease }: Props) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.numberArea}>
