@@ -1,8 +1,18 @@
 import React from "react";
-import { FlatList, View, Text, StyleSheet } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ todos, onToggle, onRemove }) => {
+interface TodoListProps {
+  todos: {
+    id: number;
+    text: string;
+    done: boolean;
+  }[];
+  onToggle: (id: number) => void;
+  onRemove: (id: number) => void;
+}
+
+const TodoList = ({ todos, onToggle, onRemove }: TodoListProps) => {
   return (
     <FlatList
       ItemSeparatorComponent={() => <View style={styles.seperator} />} // ListItem사이 구분선 지정 Props

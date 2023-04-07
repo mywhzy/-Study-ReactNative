@@ -2,7 +2,11 @@ import React from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context/";
 
-const DateHead = ({ date }) => {
+interface DateProps {
+  date: Date;
+}
+
+const DateHead = ({ date }: DateProps) => {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();

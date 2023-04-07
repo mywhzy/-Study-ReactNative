@@ -9,7 +9,15 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-const TodoItem = ({ id, text, done, onToggle, onRemove }) => {
+interface TodoItemProps {
+  id: number;
+  text: string;
+  done: boolean;
+  onToggle: (id: number) => void;
+  onRemove: (id: number) => void;
+}
+
+const TodoItem = ({ id, text, done, onToggle, onRemove }: TodoItemProps) => {
   const remove = () => {
     Alert.alert(
       "삭제", // 제목

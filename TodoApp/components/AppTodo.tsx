@@ -10,7 +10,11 @@ import {
   Keyboard,
 } from "react-native";
 
-const AppTodo = ({ onInsert }) => {
+interface AppTodoProps {
+  onInsert: (text: string) => void;
+}
+
+const AppTodo = ({ onInsert }: AppTodoProps) => {
   const [text, setText] = useState("");
 
   const onPress = () => {
