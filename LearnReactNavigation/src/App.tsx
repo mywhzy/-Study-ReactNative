@@ -6,7 +6,15 @@ import DetailScreen from './screens/DetailScreen';
 import { View, Text, TouchableOpacity } from 'react-native';
 import HeaderlessScreen from './screens/HeaderlessScreen';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  Detail: {
+    id: number;
+  };
+  Headerless: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
@@ -29,16 +37,16 @@ const App = () => {
         <Stack.Screen
           name="Detail"
           component={DetailScreen}
-          options={{
-            // headerLeft: ({ onPress }) => (
-            //   <TouchableOpacity onPress={onPress}>
-            //     <Text>Left</Text>
-            //   </TouchableOpacity>
-            // ),
+          options={({ navigation, route }) => ({
+            headerLeft: () => (
+              <TouchableOpacity onPress={() => navigation.pop()}>
+                <Text>Left</Text>
+              </TouchableOpacity>
+            ),
             headerBackVisible: false,
-            headerTitle: ({ children }) => (
+            headerTitle: () => (
               <View>
-                <Text>{children}</Text>
+                <Text>{`상세 정보 - ${route.params.id}`}</Text>
               </View>
             ),
             headerRight: () => (
@@ -46,7 +54,7 @@ const App = () => {
                 <Text>Right</Text>
               </View>
             ),
-          }}
+          })}
         />
         <Stack.Screen
           name="Headerless"
