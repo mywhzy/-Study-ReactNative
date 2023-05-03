@@ -6,4 +6,6 @@
 
 - [x] 5.3.1 drawerPosition props 에러 해결 => screenOptions Props 내부 옵션으로 변경된 것으로 확인
 
+- [x] bottomTabNavigator -> tabBarOptions 에러 => screenOptions Props의 tabBar~로 수정
+
 - [ ] screens 폴더 내부 파일 tsx로 변경하기
