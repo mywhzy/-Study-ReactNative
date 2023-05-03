@@ -13,7 +13,7 @@ const App = () => {
         <Stack.Screen
           name="Main"
           component={MainScreen}
-          options={{ headerShown: false }} // header 두 개 나타나는 것 방지 -> 하단 탭 내비를 네이티브 스택 내비 내부에서 사용할 시 설정
+          // MaterialTopTab은 header 보여주지 않으므로 headerShown:flase 옵션 제거
         />
         <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>
