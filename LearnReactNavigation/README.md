@@ -8,4 +8,6 @@
 
 - [x] bottomTabNavigator -> tabBarOptions 에러 => screenOptions Props의 tabBar~로 수정
 
+- [x] MaterialBottomTabs -> Tab.screen 내부 tabBarColor Props 적용 에러 => react-native-paper 버전 5.7.2 -> 4.7.2 다운그레이드로 해결
+
 - [ ] screens 폴더 내부 파일 tsx로 변경하기
