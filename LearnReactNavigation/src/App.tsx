@@ -8,7 +8,6 @@ import {
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainScreen from './screens/MainScreen';
 import DetailScreen from './screens/DetailScreen';
-import { Route } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 
