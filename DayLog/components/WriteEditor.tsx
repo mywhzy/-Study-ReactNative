@@ -2,10 +2,10 @@ import { useRef, Dispatch, SetStateAction } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 
 export type WriteEditorProps = {
-  title?: string;
-  body?: string;
-  onChangeTitle?: Dispatch<SetStateAction<string>>;
-  onChangeBody?: Dispatch<SetStateAction<string>>;
+  title: string;
+  body: string;
+  onChangeTitle: Dispatch<SetStateAction<string>>;
+  onChangeBody: Dispatch<SetStateAction<string>>;
 };
 
 const WriteEditor = ({
